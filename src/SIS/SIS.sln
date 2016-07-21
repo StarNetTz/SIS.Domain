@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS", "SIS\SIS.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS.BDD", "SIS.BDD\SIS.BDD.csproj", "{2972CE06-95DC-4AD2-ADF2-6058F13A8E7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS.PL", "SIS.PL\SIS.PL.csproj", "{2DB26451-B962-450A-8C1B-5A05F49A72FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2972CE06-95DC-4AD2-ADF2-6058F13A8E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2972CE06-95DC-4AD2-ADF2-6058F13A8E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2972CE06-95DC-4AD2-ADF2-6058F13A8E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB26451-B962-450A-8C1B-5A05F49A72FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB26451-B962-450A-8C1B-5A05F49A72FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB26451-B962-450A-8C1B-5A05F49A72FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB26451-B962-450A-8C1B-5A05F49A72FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

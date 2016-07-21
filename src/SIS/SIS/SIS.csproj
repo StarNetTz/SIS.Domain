@@ -30,15 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="StarNet.DDD">
+      <HintPath>..\lib\StarNet.DDD.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Competition\CompetitionAggregate.cs" />
+    <Compile Include="Competition\CompetitionAggregateEvents.cs" />
+    <Compile Include="Competition\CompetitionAggregateState.cs" />
+    <Compile Include="Competition\CompetitionAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Football\" />
+    <ProjectReference Include="..\SIS.PL\SIS.PL.csproj">
+      <Project>{2db26451-b962-450a-8c1b-5a05f49a72fc}</Project>
+      <Name>SIS.PL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
