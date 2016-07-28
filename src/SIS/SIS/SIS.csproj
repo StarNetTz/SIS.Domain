@@ -42,12 +42,17 @@
     <Compile Include="Competition\CompetitionAggregateEvents.cs" />
     <Compile Include="Competition\CompetitionAggregateState.cs" />
     <Compile Include="Competition\CompetitionAppService.cs" />
+    <Compile Include="Competition\AddCompetitionValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SIS.PL\SIS.PL.csproj">
       <Project>{2db26451-b962-450a-8c1b-5a05f49a72fc}</Project>
       <Name>SIS.PL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIS.ReadModel\SIS.ReadModel.csproj">
+      <Project>{d0024aa4-bb66-4231-9b11-ef62f208d858}</Project>
+      <Name>SIS.ReadModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,17 +6,20 @@ namespace SIS
 {
     public class CompetitionAppService
     {
-        readonly IAggregateRepository Repository;
-        public CompetitionAppService(IAggregateRepository repository)
+        readonly IAggregateRepository AggRepository;
+        readonly ICompetitionReadModel ReadModelRepository;
+
+        public CompetitionAppService(IAggregateRepository repository, ICompetitionReadModel readModel)
         {
-            Repository = repository;
+            AggRepository = repository;
+            ReadModelRepository = readModel;
         }
 
         void ChangeAgg(Guid id, Action<CompetitionAggregate> usingThisMethod)
         {
-            var agg = Repository.GetById<CompetitionAggregate>(id);
+            var agg = AggRepository.GetById<CompetitionAggregate>(id);
             usingThisMethod(agg);
-            Repository.Save(agg);
+            AggRepository.Save(agg);
         }
 
         public void Execute(ICommand command)
@@ -26,12 +29,15 @@ namespace SIS
 
         private void When(AddCompetition c)
         {
+            new AddCompetitionValidator(ReadModelRepository).Validate(c);
             ChangeAgg(c.Id, agg => agg.AddCompetition(c));
         }
 
         private void When(RenameCompetition c)
         {
+            new RenameCompetitionValidator(ReadModelRepository).Validate(c);
             ChangeAgg(c.Id, agg => agg.RenameCompetition(c));
         }
+
     }
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2DB26451-B962-450A-8C1B-5A05F49A72FC}</ProjectGuid>
+    <ProjectGuid>{C10091BF-F162-465C-91B6-A300692756AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SIS.PL</RootNamespace>
-    <AssemblyName>SIS.PL</AssemblyName>
+    <RootNamespace>SIS.ReadModel.TDD</RootNamespace>
+    <AssemblyName>SIS.ReadModel.TDD</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,18 +30,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\AddCompetition.cs" />
-    <Compile Include="Events\AddCompetition.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="IEvent.cs" />
+    <Compile Include="CompetitionObserverTests.cs" />
+    <Compile Include="InMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIS.PL\SIS.PL.csproj">
+      <Project>{2db26451-b962-450a-8c1b-5a05f49a72fc}</Project>
+      <Name>SIS.PL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIS.ReadModel\SIS.ReadModel.csproj">
+      <Project>{d0024aa4-bb66-4231-9b11-ef62f208d858}</Project>
+      <Name>SIS.ReadModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

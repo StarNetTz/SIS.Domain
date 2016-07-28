@@ -1,6 +1,5 @@
 ﻿using SIS.PL;
 using StarNet.DDD;
-using System;
 
 namespace SIS
 {
@@ -16,18 +15,15 @@ namespace SIS
         public void AddCompetition(AddCompetition cmd)
         {
             if (CompetitionState.Version > 0)
-                throw new CompetitionAlreadyExistsException();
+                throw DomainError.Named("CompetitionAlreadyExists", string.Empty);
             var e = new CompetitionAdded() { Id = cmd.Id, Name = cmd.Name };
             Apply(e);
         }
 
         public void RenameCompetition(RenameCompetition cmd)
         {
-           
             var e = new CompetitionRenamed() { Id = cmd.Id, Name = cmd.Name };
             Apply(e);
         }
-
-        public class CompetitionAlreadyExistsException : Exception  {}
     }
 }
