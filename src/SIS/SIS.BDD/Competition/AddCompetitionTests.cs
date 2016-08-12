@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
-using SIS.PL;
+using SIS.PL.Commands;
+using SIS.PL.Events;
 using System;
 
 namespace SIS.BDD

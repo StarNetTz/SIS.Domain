@@ -1,10 +1,14 @@
-﻿using SIS.PL;
+﻿using SIS.PL.Commands;
+using SIS.ReadModel;
 using StarNet.DDD.Persistence;
+using StarNet.DDD.PL;
 using System;
 
 namespace SIS
 {
-    public class CompetitionAppService
+    public interface ICompetitionAppService : IApplicationService { }
+
+    public class CompetitionAppService : ICompetitionAppService
     {
         readonly IAggregateRepository AggRepository;
         readonly ICompetitionReadModel ReadModelRepository;
@@ -19,7 +23,7 @@ namespace SIS
         {
             var agg = AggRepository.GetById<CompetitionAggregate>(id);
             usingThisMethod(agg);
-            AggRepository.Save(agg);
+            AggRepository.Store(agg);
         }
 
         public void Execute(ICommand command)

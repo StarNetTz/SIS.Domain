@@ -1,4 +1,6 @@
-﻿using StarNet.DDD;
+﻿using SIS.PL.Events;
+using StarNet.DDD;
+using StarNet.DDD.PL;
 
 namespace SIS
 {
@@ -6,7 +8,7 @@ namespace SIS
     {
         private string Name { get; set; }
 
-        protected override void DelegateWhenToConcreteClass(IAggregateEvent ev)
+        protected override void DelegateWhenToConcreteClass(IEvent ev)
         {
             When((dynamic)ev);
         }

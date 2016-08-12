@@ -30,15 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="StarNet.DDD.PL">
+      <HintPath>..\lib\StarNet.DDD.PL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\AddCompetition.cs" />
-    <Compile Include="Events\AddCompetition.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="IEvent.cs" />
+    <Compile Include="Commands\MatchCommands.cs" />
+    <Compile Include="Commands\TeamCommands.cs" />
+    <Compile Include="Commands\SeasonCommands.cs" />
+    <Compile Include="Commands\CompetitionCommands.cs" />
+    <Compile Include="Events\MatchEvents.cs" />
+    <Compile Include="Events\TeamEvents.cs" />
+    <Compile Include="Events\SeasonEvents.cs" />
+    <Compile Include="Events\CompetitionEvents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

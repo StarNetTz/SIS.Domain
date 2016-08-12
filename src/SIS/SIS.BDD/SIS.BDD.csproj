@@ -48,15 +48,24 @@
     <Reference Include="StarNet.DDD">
       <HintPath>..\lib\StarNet.DDD.dll</HintPath>
     </Reference>
+    <Reference Include="StarNet.DDD.PL">
+      <HintPath>..\lib\StarNet.DDD.PL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServiceSpecs\CompetitionServiceSpec.cs" />
+    <Compile Include="Season\AddSeasonTests.cs" />
+    <Compile Include="Match\AddTeamTests.cs" />
+    <Compile Include="Match\_ServiceSpec.cs" />
+    <Compile Include="Team\_ServiceSpec.cs" />
+    <Compile Include="Season\_ServiceSpec.cs" />
+    <Compile Include="Competition\_ServiceSpec.cs" />
     <Compile Include="Competition\RenameCompetitionTests.cs" />
     <Compile Include="Competition\AddCompetitionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Team\AddTeamTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -75,6 +84,7 @@
       <Name>SIS</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

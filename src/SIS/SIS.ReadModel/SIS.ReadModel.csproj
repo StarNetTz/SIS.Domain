@@ -30,18 +30,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Raven.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RavenDB.Client.3.0.30143\lib\net45\Raven.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight, Version=3.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RavenDB.Client.3.0.30143\lib\net45\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="StarNet.DDD.PL">
+      <HintPath>..\lib\StarNet.DDD.PL.dll</HintPath>
+    </Reference>
+    <Reference Include="StarNet.DDD.ReadModel">
+      <HintPath>..\lib\StarNet.DDD.ReadModel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEventObserver.cs" />
-    <Compile Include="CompetitionObserver.cs" />
-    <Compile Include="IEntity.cs" />
-    <Compile Include="IProjector.cs" />
     <Compile Include="Competition.cs" />
-    <Compile Include="ICompetitionRepository.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IDocument.cs" />
+    <Compile Include="PaginatedQuery.cs" />
+    <Compile Include="RavenGlobal.cs" />
+    <Compile Include="ICompetitionReadModel.cs" />
+    <Compile Include="PaginatedResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +63,9 @@
       <Project>{2db26451-b962-450a-8c1b-5a05f49a72fc}</Project>
       <Name>SIS.PL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

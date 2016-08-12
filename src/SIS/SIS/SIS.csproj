@@ -33,17 +33,30 @@
     <Reference Include="StarNet.DDD">
       <HintPath>..\lib\StarNet.DDD.dll</HintPath>
     </Reference>
+    <Reference Include="StarNet.DDD.PL">
+      <HintPath>..\lib\StarNet.DDD.PL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Competition\CompetitionAggregate.cs" />
-    <Compile Include="Competition\CompetitionAggregateEvents.cs" />
     <Compile Include="Competition\CompetitionAggregateState.cs" />
     <Compile Include="Competition\CompetitionAppService.cs" />
     <Compile Include="Competition\AddCompetitionValidator.cs" />
+    <Compile Include="IApplicationService.cs" />
+    <Compile Include="Competition\RenameCompetitionValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Match\MatchAggregate.cs" />
+    <Compile Include="Match\MatchAggregateState.cs" />
+    <Compile Include="Match\MatchAppService.cs" />
+    <Compile Include="Team\TeamAggregate.cs" />
+    <Compile Include="Team\TeamAggregateState.cs" />
+    <Compile Include="Team\TeamAppService.cs" />
+    <Compile Include="Season\SeasonAggregate.cs" />
+    <Compile Include="Season\SeasonAggregateState.cs" />
+    <Compile Include="Season\SeasonAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SIS.PL\SIS.PL.csproj">
